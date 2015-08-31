@@ -6,4 +6,4 @@ else
    version="${1}"
 fi
 
-docker push localhost:5000/reza/nodejs_app:"${version}"
+sudo docker push localhost:5000/reza/nodejs_app:"${version}"

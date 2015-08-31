@@ -6,5 +6,5 @@ else
    version="${1}"
 fi
 
-docker build -t localhost:5000/reza/nodejs_app:${version} .
+sudo docker build -t localhost:5000/reza/nodejs_app:${version} .
 cd ..
