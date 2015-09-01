@@ -23,4 +23,4 @@ cp -f app_marathon.json app_marathon.json.tmp
 sed -i "s/latest/${version}/g" app_marathon.json.tmp
 
 # post the application to Marathon
-curl --noproxy loaclhost -X POST -H "Content-Type: application/json" http://${marathon}:8080/#/apps -d@app_marathon.json.tmp
+curl --noproxy loaclhost -X POST -H "Content-Type: application/json" http://${marathon}:8080/v2/apps -d@app_marathon.json.tmp
