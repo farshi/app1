@@ -1,0 +1,15 @@
+{
+    "id": "app1", 
+    "container": {
+      "docker": {
+        "image": "localhost:5000/reza/nodejs_app:latest",
+        "network": "BRIDGE",
+        "portMappings": [
+          {"containerPort": 8000, "servicePort": 8000}
+        ]
+      }
+    },
+    "cpus": 0.2,
+    "mem": 512.0,
+    "instances": 1 
+}
