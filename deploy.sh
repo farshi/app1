@@ -18,5 +18,8 @@ sleep 1
 cp -f app_marathon.json app_marathon.json.tmp
 sed -i "s/latest/${version}/g" app_marathon.json.tmp
 
+printf -v no_proxy '%s,' 172.17.0.{1..255};
+export no_proxy_list="${no_proxy%,}";
+
 # post the application to Marathon
-curl -X POST -H "Content-Type: application/json" http://${marathon}:8080/v2/apps -d@app_marathon.json.tmp
+curl --noproxy $no_proxy_list -X POST -H "Content-Type: application/json" http://${marathon}:8080/v2/apps -d@app_marathon.json.tmp
