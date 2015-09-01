@@ -17,7 +17,7 @@ sleep 1
 # these lines will create a copy of app_marathon.json and update the image version
 cp -f app_marathon.json app_marathon.json.tmp
 
-printf -v no_proxy '%s,' 10.1.{1..255}.{1..255};
+printf  no_proxy '%s,' 10.1.{1..255}.{1..255};
 export no_proxy="${no_proxy%,}";
 echo $no_proxy
 
