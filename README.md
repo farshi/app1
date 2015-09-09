@@ -61,3 +61,9 @@ EXPOSE 8000
 CMD []
 ENTRYPOINT ["/nodejs/bin/npm", "start"]
 ```
+for creating and pushing the docker image to the local docker registry run this command
+
+```shell
+$ docker build -t localhost:5000/reza/nodejs_app .
+$ docker push localhost:5000/reza/nodejs_app
+```
