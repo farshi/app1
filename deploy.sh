@@ -9,7 +9,6 @@ else
   
 fi
 
-echo "marathon host" , ${marathon}
 # destroy old application
 curl --noproxy ${MARATHON_PORT_8080_TCP_ADDR}  -X DELETE -H "Content-Type: application/json" http://${marathon}:8080/v2/apps/app1 
 
