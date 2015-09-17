@@ -1,17 +1,17 @@
 #App1
+This is the sample application written in Nodejs , This simple web application jus say Hello World! .
 
-Requirements
-
-1- Install docker engine
 
 
 #Tutorial
 
+This section describes the source code and shows you how code works.
 ```shell
 $mkdir app1
 $cd app1
 $vim app.js
 ```
+
 
 ```javascript
 
@@ -31,6 +31,8 @@ server.listen(8000);
 console.log("Server running at http://127.0.0.1:8000/");
 ```
 
+
+We need to defing pacakge.json to define which version of express framework we are going to use in this app.
 ```shell
   $vim package.json
 ```
@@ -49,6 +51,8 @@ console.log("Server running at http://127.0.0.1:8000/");
 }
 
 ```
+
+We are going to do immutable deployment, so every time we want to change the code , we will create new container and put our applicaion inside that container. Here is the Dockerfile code for creating our app docker image.
 ```bash
 $vim Dockefile
 ```
@@ -76,9 +80,12 @@ if you have jenkins server you can automate building docker images for each buil
 go to jenkins console and define these two build steps and put each of these lines to corresponding build scripts
 
 ####Script for build phase1 :
+go to jenkins config and a new build stage
+
 ```shell
 sh build.sh $BUILD_NUMBER
 ```
+and another one and put these lines.
 
 ####script for build phase2:
 ```shell
