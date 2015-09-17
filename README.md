@@ -89,12 +89,12 @@ if you have jenkins server you can automate building docker images for each buil
 go to jenkins console and define these two build steps and put each of these lines to corresponding build scripts
 
 ####Script for building  :
-go to jenkins config and a new build step to run shell script
+go to jenkins config and add a new build step to run shell script
 
 ```shell
 sh build.sh $BUILD_NUMBER
 ```
-and add another one and put these lines for
+and  add another one and put these lines for
 
 ####script for deploying :
 ```shell
