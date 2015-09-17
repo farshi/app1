@@ -1,7 +1,7 @@
 #App1
 This is a sample web application which has written in Nodejs, using express framework.The app  just will say Hello World! . The intention is to show how we can implement immutable deployment using docker based container. we will configure jenkis to pull the code and build and deploy new docker images each time we ask the jenkins to build the app.
 
-If you want to setup dokcer, jenkins and mesos tools just simply using the Vagrant. go and check it out this project : https://github.com/farshi/mesos-cicd
+you will need [mesos-cicd](https://github.com/farshi/mesos-cicd) project to  setup dokcer, jenkins and mesos tools just simply using the Vagrant.So go and check it out this project first : https://github.com/farshi/mesos-cicd
 
 
 
