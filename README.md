@@ -76,6 +76,13 @@ for creating and pushing the docker image to the local docker registry run this 
 $ docker build -t localhost:5000/reza/nodejs_app .
 $ docker push localhost:5000/reza/nodejs_app
 ```
+don't have local docker registry ? it's so simple ,containerizatoin made it simple. docker repositor inisde the docek :D, it's cool is'nt it , just run this command:
+
+Run registry First
+
+```shell
+docker run -p 5000:5000 -v ./registry-stuff:/registry -e STORAGE_PATH=/registry registry
+```
 
 if you have jenkins server you can automate building docker images for each build and push the images to your local docker registry
 
