@@ -1,11 +1,13 @@
 #App1
-This is the sample application written in Nodejs , This simple web application jus say Hello World! .
+This is a sample web application which has written in Nodejs, using express framework.The app  just will say Hello World! . The intention is to show how we can implement immutable deployment using docker based container. we will configure jenkis to pull the code and build and deploy new docker images each time we ask the jenkins to build the app.
+
+If you want to setup dokcer, jenkins and mesos tools just simply using the Vagrant. go and check it out this project : https://github.com/farshi/mesos-cicd
 
 
 
 #Tutorial
 
-This section describes the source code and shows you how code works.
+This section describes the source codes and shows you how it works.
 ```shell
 $mkdir app1
 $cd app1
@@ -52,7 +54,7 @@ We need to defing pacakge.json to define which version of express framework we a
 
 ```
 
-We are going to do immutable deployment, so every time we want to change the code , we will create new container and put our applicaion inside that container. Here is the Dockerfile code for creating our app docker image.
+We are going to do immutable deployment, so every time we want to change the code , we will create new container and put our application inside that container. Here is the Dockerfile code for creating our app docker image.
 ```bash
 $vim Dockefile
 ```
@@ -79,15 +81,15 @@ if you have jenkins server you can automate building docker images for each buil
 
 go to jenkins console and define these two build steps and put each of these lines to corresponding build scripts
 
-####Script for build phase1 :
-go to jenkins config and a new build stage
+####Script for building  :
+go to jenkins config and a new build step to run shell script
 
 ```shell
 sh build.sh $BUILD_NUMBER
 ```
-and another one and put these lines.
+and add another one and put these lines for
 
-####script for build phase2:
+####script for deploying :
 ```shell
 sh push.sh $BUILD_NUMBER
 ```
